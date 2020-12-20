@@ -30,6 +30,30 @@ void deleteNode(node** headRef, int key){
   prev->next=temp->next;
   delete temp;
 }
-void printList(node** headRef){
+void printer(node* headRef){
+  node* temp=headRef;
+  while(temp!=NULL){
+    cout << temp->data << " ";
+    temp=temp->next;
+
+  }
+}
+int main(){
+  node* head = NULL; 
   
+    // Add elements in linked list 
+    push(&head, 7); 
+    push(&head, 1); 
+    push(&head, 3); 
+    push(&head, 2); 
+  
+     
+    printer(head);
+  
+    deleteNode(&head, 1); 
+    puts("\nLinked List after Deletion of 1: "); 
+      
+    printer(head); 
+      
+    return 0; 
 }
